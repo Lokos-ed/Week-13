@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <h1>Video Game Database</h1>
+    <h2>Week 12 Assignment</h2>
+    <table class="table table-bordered" id="gameTable">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Game Name</th>
+                <th scope="col">Copies Sold</th>
+            </tr>
+        </thead>
+        <!--This is the part of the table that new elements are appended into-->
+        <tbody id="tableBody">
+
+        </tbody>
+    </table>
+
+    <!--These are the form input boxes as well as the submit form button. These have all been styled with bootstrap-->
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <label class="sr-only" for="gameNameInput"></label>
+            <input type="text" class="form-control mb-2" id="gameNameInput" placeholder="Game Name">
+        </div>
+        <div class="col-auto">
+            <label class="sr-only" for="copiesSoldInput"></label>
+            <input type="text" class="form-control mb-2" id="copiesSoldInput" placeholder="Copies Sold">
+        </div>
+        <div class="row-auto">
+            <button type="submit" id="formSubmit" class="btn btn-primary mb-2">Add Game Entry</button>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
