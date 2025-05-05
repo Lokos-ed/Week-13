@@ -6,6 +6,10 @@ type games = {
   sold: string
 }
 
+function delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms) );
+}
+
 const tableBody = document.getElementById("tableBody")
 
 //Above gets tableBody element from html as a constant variable.
@@ -57,12 +61,12 @@ async function getP() {
                 //This waits for the button assigned to the td4 variable to be clicked.
                 //Afterwards it fetches the id of the element the delete button was assigned to.
                 //Then it deletes the entry from the database, clears the table, and reloads the database entries onto the table.
-                td4.addEventListener("click", () => {
+                td4.addEventListener("click", async () => {
                     fetch(`http://localhost:3000/games/${element.id}`, {
                         method: 'DELETE'
                     })
                     ClearTable()
-
+                    await delay(100)
                     getP()
                 })
 
@@ -81,7 +85,7 @@ getP()
 //this creates a constant variable with the html element id for the submit form button
 const submitFormButton = document.getElementById("formSubmit") as HTMLDivElement
 //this waits for the submit form button to be clicked
-submitFormButton.addEventListener("click", (event) => {
+submitFormButton.addEventListener("click", async (event) => {
     //this prevents the page from refreshing when clicked
     event.preventDefault()
     
@@ -107,7 +111,10 @@ submitFormButton.addEventListener("click", (event) => {
         body: JSON.stringify(info)
     })
     //this clears the table
+
+  
+  
     ClearTable()
-    //this loads the database and displays it on the table
+    await delay(100);
     getP()
 })
