@@ -1,11 +1,6 @@
 {
   "games": [
     {
-      "id": "1",
-      "title": "LEGO Batman",
-      "sold": "12.81 Million"
-    },
-    {
       "id": "2",
       "title": "LEGO Star Wars: The Complete Saga",
       "sold": "15.29 Million"
